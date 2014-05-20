@@ -1,4 +1,4 @@
-class Cathode < Cask
+class VoipConnect < Cask
   url 'http://www.voipconnect.com/public/download/VoipConnect_1.00.pkg'
   homepage 'http://www.voipconnect.com/'
   version '1.0.0'

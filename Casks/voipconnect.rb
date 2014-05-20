@@ -3,5 +3,8 @@ class Voipconnect < Cask
   homepage 'http://www.voipconnect.com/'
   version '1.0.0'
   sha256 '05f80c472e012dce9efeadbfc213e91e63db967972f5757b2ca61faf4564c9ec'
-  link 'VoipConnect.app'
+  install 'VoipConnect_1.00.pkg'
+  uninstall :files => [
+    '/Applications/VoipConnect.pkg'
+  ]
 end

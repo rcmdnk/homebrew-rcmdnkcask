@@ -5,6 +5,6 @@ class Voipconnect < Cask
   sha256 '05f80c472e012dce9efeadbfc213e91e63db967972f5757b2ca61faf4564c9ec'
   install 'VoipConnect_1.00.pkg'
   uninstall :files => [
-    '/Applications/VoipConnect.pkg'
+    '/Applications/VoipConnect.app'
   ]
 end

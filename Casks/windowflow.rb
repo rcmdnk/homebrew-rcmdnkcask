@@ -1,4 +1,4 @@
-class Notify < Cask
+class Windowflow < Cask
   url 'http://files.windowflow.com/windowflow-standard.zip'
   homepage 'http://most-advantageous.com/windowflow/'
   version 'latest'

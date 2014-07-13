@@ -3,7 +3,13 @@ homebrew-rcmdnkcask
 
 My Casks:
 
-
-* [Cathode](http://www.secretgeometry.com/apps/cathode/)
-* [MadRuby](http://www.wingsforpigs.com/MadRuby/MadRuby.html)
-* [SimpleFloatingClock](http://www.splook.com/Software/Simple_Floating_Clock.html)
+* Applications
+    * [Cathode](http://www.secretgeometry.com/apps/cathode/)
+    * [LightningKeyboard](http://morishin.hatenablog.com/entry/2014/07/05/213741)
+    * [MadRuby](http://www.wingsforpigs.com/MadRuby/MadRuby.html)
+    * [Notify Pro](http://www.macupdate.com/app/mac/32217/notify-pro)
+    * [SimpleFloatingClock](http://www.splook.com/Software/Simple_Floating_Clock.html)
+    * [WindowFlow](http://most-advantageous.com/windowflow/)
+    * [Voip Connect](http://www.voipconnect.com/)
+* Fonts
+    * [Migu 1M](http://mix-mplus-ipa.sourceforge.jp/migu/)

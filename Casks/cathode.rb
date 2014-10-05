@@ -1,9 +1,10 @@
 class Cathode < Cask
-  version 'latest'
+  version :latest
   sha256 :no_check
 
   url 'http://store.secretgeometry.com/download.php?id=7'
   homepage 'http://www.secretgeometry.com/apps/cathode/'
+  license :unknown
 
-  link 'Cathode.app'
+  app 'Cathode.app'
 end

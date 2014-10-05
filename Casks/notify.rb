@@ -4,6 +4,7 @@ class Notify < Cask
 
   url 'http://www.macupdate.com/download/32217/notify-216.zip'
   homepage 'http://www.macupdate.com/app/mac/32217/notify-pro'
+  license :unknown
 
-  link 'Notify.app'
+  app 'Notify.app'
 end

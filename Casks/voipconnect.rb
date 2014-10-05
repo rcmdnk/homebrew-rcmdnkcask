@@ -4,9 +4,11 @@ class Voipconnect < Cask
 
   url 'http://www.voipconnect.com/public/download/VoipConnect_1.00.pkg'
   homepage 'http://www.voipconnect.com/'
+  license :unknown
 
-  install 'VoipConnect_1.00.pkg'
-  uninstall :files => [
-    '/Applications/VoipConnect.app'
-  ]
+  pkg 'VoipConnect_1.00.pkg'
+  uninstall :pkgutil => [
+      'com.tresmax.voipconnect.VoipConnect.pkg',
+      'com.tresmax.voipconnect.postflight.pkg',
+    ]
 end

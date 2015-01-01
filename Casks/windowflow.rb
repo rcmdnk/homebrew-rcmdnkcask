@@ -1,4 +1,4 @@
-class Windowflow < Cask
+cask :v1 => 'windowflow' do
   version :latest
   sha256 :no_check
 

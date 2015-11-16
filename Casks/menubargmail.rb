@@ -7,5 +7,5 @@ cask :v1 => 'menubargmail' do
   homepage 'https://github.com/rcmdnk/MenuBarGmail'
   license :mit
 
-  app "MenuBarGmail-v#{version}/MenuBarGmail.app"
+  app "MenuBarGmail-#{version}/MenuBarGmail.app"
 end

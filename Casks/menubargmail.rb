@@ -1,6 +1,6 @@
 cask :v1 => 'menubargmail' do
-  version '0.0.6'
-  sha256 'f21c3c0788272375fc2cf4ae7135ffc22455c41e1889eb3790361f2be39bb93b'
+  version '0.0.7'
+  sha256 '1973f95a7c988f1139c53520f481640ae497628cf35786ac76912c0789abe9b5'
 
   url "https://github.com/rcmdnk/MenuBarGmail/archive/v#{version}.tar.gz"
   name 'MenuBarGmail'
@@ -8,4 +8,9 @@ cask :v1 => 'menubargmail' do
   license :mit
 
   app "MenuBarGmail-#{version}/MenuBarGmail.app"
+
+  uninstall :script => {
+    :executable => 'MenuBarGmail/Contents/MacOS/MenuBarGmail',
+    :args => ['-u']
+  }
 end

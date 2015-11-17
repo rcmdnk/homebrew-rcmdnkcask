@@ -10,7 +10,7 @@ cask :v1 => 'menubargmail' do
   app "MenuBarGmail-#{version}/MenuBarGmail.app"
 
   uninstall :script => {
-    :executable => "MenuBarGmail-#{version}/Contents/MacOS/MenuBarGmail",
+    :executable => "MenuBarGmail.app/Contents/MacOS/MenuBarGmail",
     :args => ['-u']
   }
 end

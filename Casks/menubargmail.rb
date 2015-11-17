@@ -7,10 +7,10 @@ cask :v1 => 'menubargmail' do
   homepage 'https://github.com/rcmdnk/MenuBarGmail'
   license :mit
 
-  app "#{name}-#{version}/#{name}.app"
+  app "MenuBarGmail-#{version}/MenuBarGmail.app"
 
   uninstall :script => {
-    :executable => "#{name}-#{version}/#{name}.app/Contents/MacOS/#{name}",
+    :executable => "MenuBarGmail-#{version}/#{name}.app/Contents/MacOS/MenuBarGmail",
     :args => ['-u']
   }
 end

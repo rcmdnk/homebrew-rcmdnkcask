@@ -5,7 +5,7 @@ My Casks:
 
 * Applications
     * [Cathode](http://www.secretgeometry.com/apps/cathode/) -> available in [caskroom/homebrew-cask](https://github.com/caskroom/homebrew-cask)
-    * [Configure Application Dock Tile](http://boredzo.org/cadt/)
+    * [Configure Application Dock Tile](http://boredzo.org/cadt/) -> available in [caskroom/homebrew-cask](https://github.com/caskroom/homebrew-cask/blob/master/Casks/configure-application-dock-tile.rb)
     * [KeyCastr](https://github.com/sdeken/keycastr) -> moved to [caskroom/homebrew-cask](https://github.com/caskroom/homebrew-cask)
     * [LightningKeyboard](http://morishin.hatenablog.com/entry/2014/07/05/213741)
     * [MadRuby](http://www.wingsforpigs.com/MadRuby/MadRuby.html) -> moved to [caskroom/homebrew-cask](https://github.com/caskroom/homebrew-cask)

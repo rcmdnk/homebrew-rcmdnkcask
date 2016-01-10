@@ -1,4 +1,4 @@
-cask :v1 => 'lightningkeyboard' do
+cask 'lightningkeyboard' do
   version :latest
   sha256 :no_check
 

@@ -1,4 +1,4 @@
-cask :v1 => 'menubargmail' do
+cask 'menubargmail' do
   version '0.0.12'
   sha256 '58ed6768e24c04335b2adcfdd1338ac69a3aa3d938f1d5459f4b1ac0daacf7ec'
 

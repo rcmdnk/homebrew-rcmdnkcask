@@ -1,4 +1,4 @@
-cask :v1 => 'miaforgmail' do
+cask 'miaforgmail' do
   version :latest
   sha256 :no_check
 

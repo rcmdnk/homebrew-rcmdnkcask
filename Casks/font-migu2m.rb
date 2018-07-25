@@ -4,7 +4,7 @@ cask 'font-migu2m' do
 
   url "http://osdn.jp/frs/redir.php?m=iij&f=%2Fmix-mplus-ipa%2F59022%2Fmigu-2m-#{version}.zip"
   homepage 'http://mix-mplus-ipa.sourceforge.jp/migu/'
-  license :unknown
+  license 'http://mix-mplus-ipa.osdn.jp/migmix/IPA_Font_License_Agreement_v1.0.txt'
 
   font 'migu-1m-20130617/migu-2m-bold.ttf'
   font 'migu-1m-20130617/migu-2m-regular.ttf'

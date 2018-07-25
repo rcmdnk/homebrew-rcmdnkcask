@@ -4,7 +4,6 @@ cask 'windowflow' do
 
   url 'http://files.windowflow.com/windowflow-standard.zip'
   homepage 'http://most-advantageous.com/windowflow/'
-  license :unknown
 
   app 'WindowFlow.app'
 end

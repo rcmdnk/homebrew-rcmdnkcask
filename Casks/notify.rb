@@ -4,7 +4,6 @@ cask 'notify' do
 
   url "http://www.macupdate.com/download/32217/notify-#{version.gsub('.','')}.zip"
   homepage 'http://www.macupdate.com/app/mac/32217/notify-pro'
-  license :unknown
 
   app 'Notify.app'
 end

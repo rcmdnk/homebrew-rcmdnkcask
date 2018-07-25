@@ -4,7 +4,6 @@ cask 'voipconnect' do
 
   url 'http://www.voipconnect.com/public/download/VoipConnect_1.00.pkg'
   homepage 'http://www.voipconnect.com/'
-  license :unknown
 
   pkg 'VoipConnect_1.00.pkg'
   uninstall :pkgutil => [

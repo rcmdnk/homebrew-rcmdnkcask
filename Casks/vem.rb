@@ -1,4 +1,4 @@
-cask 'menubargmail' do
+cask 'vem' do
   version '0.1.0'
   sha256 '9d358f24ba9f46357f264212c84145744e08f62195ce4d5174ac2bdea06895f2'
 

@@ -1,6 +1,6 @@
 cask 'vem' do
   version '0.1.0'
-  sha256 '9d358f24ba9f46357f264212c84145744e08f62195ce4d5174ac2bdea06895f2'
+  sha256 '63d64aa870512bb6dbb21e75298245dc46b527e53062e89265c33f9bd9194e0e'
 
   url "https://github.com/rcmdnk/VEM/releases/download/v#{version}/VEM-v#{version}.zip"
   name 'VEM'

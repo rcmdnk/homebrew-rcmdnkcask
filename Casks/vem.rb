@@ -7,9 +7,4 @@ cask 'vem' do
   homepage 'https://github.com/rcmdnk/VEM'
 
   app "VEM.app"
-
-  uninstall :script => {
-    :executable => "/Applications/VEM.app/Contents/MacOS/VEM",
-    :args => ['-u']
-  }
 end

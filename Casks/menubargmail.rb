@@ -1,6 +1,6 @@
 cask 'menubargmail' do
-  version '0.1.0'
-  sha256 'c117bc8ed91f8a37a9e66ee2a379dc2fcc18090a5610d219f25b066bbe05b8c6'
+  version '0.2.0'
+  sha256 'b837e2e305647dc2de63f96407e4caeb18426764d6e543b11fa40e350f64ed63'
 
   url "https://github.com/rcmdnk/MenuBarGmail/archive/v#{version}.tar.gz"
   name 'MenuBarGmail'

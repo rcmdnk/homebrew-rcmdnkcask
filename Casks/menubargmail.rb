@@ -12,4 +12,4 @@ cask 'menubargmail' do
     :executable => "/Applications/MenuBarGmail.app/Contents/MacOS/MenuBarGmail",
     :args => ['-u']
   }
-end
+

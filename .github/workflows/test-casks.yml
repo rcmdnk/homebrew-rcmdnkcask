@@ -1,0 +1,76 @@
+name: Test casks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-casks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  discover:
+    name: Discover casks
+    runs-on: ubuntu-latest
+    outputs:
+      casks: ${{ steps.casks.outputs.casks }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Check README cask coverage
+        run: python3 -m unittest discover -s tests -v
+      - name: Generate cask matrix
+        id: casks
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+
+          casks = sorted({file.stem for file in Path("Casks").rglob("*.rb")})
+          if not casks:
+              raise SystemExit("No casks found")
+          with open(os.environ["GITHUB_OUTPUT"], "a") as output:
+              output.write(f"casks={json.dumps(casks)}\n")
+
+  test:
+    name: Test ${{ matrix.cask }}
+    needs: discover
+    runs-on: macos-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        cask: ${{ fromJSON(needs.discover.outputs.casks) }}
+    env:
+      HOMEBREW_NO_ANALYTICS: "1"
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+      HOMEBREW_NO_ASK: "1"
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+      CASK: rcmdnk/rcmdnkcask/${{ matrix.cask }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up the checked-out tap
+        run: |
+          brew update
+          tap_path="$(brew --repository)/Library/Taps/rcmdnk/homebrew-rcmdnkcask"
+          mkdir -p "$(dirname "$tap_path")"
+          ln -s "$GITHUB_WORKSPACE" "$tap_path"
+          brew trust rcmdnk/rcmdnkcask
+      - name: Read cask metadata
+        run: brew info --cask "$CASK"
+      - name: Install cask
+        run: brew install --cask --verbose "$CASK"
+      - name: Report verified installation
+        run: echo "$CASK installation verified." >> "$GITHUB_STEP_SUMMARY"

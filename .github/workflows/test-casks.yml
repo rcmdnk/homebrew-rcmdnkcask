@@ -32,7 +32,10 @@ jobs:
           import os
           from pathlib import Path
 
-          casks = sorted({file.stem for file in Path("Casks").rglob("*.rb")})
+          migrations = json.loads(Path("tap_migrations.json").read_text())
+          casks = sorted(
+              {file.stem for file in Path("Casks").rglob("*.rb")} | migrations.keys()
+          )
           if not casks:
               raise SystemExit("No casks found")
           with open(os.environ["GITHUB_OUTPUT"], "a") as output:
@@ -69,8 +72,11 @@ jobs:
           ln -s "$GITHUB_WORKSPACE" "$tap_path"
           brew trust rcmdnk/rcmdnkcask
       - name: Read cask metadata
-        run: brew info --cask "$CASK"
+        id: metadata
+        run: brew info --cask --json=v2 "$CASK" | python3 scripts/cask_metadata.py
       - name: Install cask
+        if: steps.metadata.outputs.disabled == 'false'
         run: brew install --cask --verbose "$CASK"
       - name: Report verified installation
+        if: steps.metadata.outputs.disabled == 'false'
         run: echo "$CASK installation verified." >> "$GITHUB_STEP_SUMMARY"
